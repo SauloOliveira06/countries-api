@@ -5,6 +5,9 @@ import styles from '../../styles/Home.module.css'
 const QUERY = gql`
     query Country {
         Country {
+            flag {
+                svgFile
+            }
             name
             capital
         }
@@ -28,8 +31,10 @@ const Countries = () => {
     return (
         <>
             <div className={styles.grid}>
-                {countries.map((country) => (
-                    <div key={country.code} className={styles.card}>
+                {countries.map((country, index) => (
+                    <div key={country, index} className={styles.card}>
+                        <img src={country.flag.svgFile} alt='svg image country' />
+                        {country.flag.emoji}
                         <h3>{country.name}</h3>
                         <p>
                             {country.name} - {country.capital}

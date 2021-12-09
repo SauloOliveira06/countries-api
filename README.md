@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started Countries API
+## Getting Started Countries API :earth_americas: :world_map: :airplane:
 
 First, run the development server:
 

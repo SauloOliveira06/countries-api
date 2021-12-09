@@ -7,8 +7,8 @@ import client from '../apollo-client/apollo-client'
 export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
-      query Countries {
-        countries {
+      query Country {
+        Country {
           name
           capital
         }
@@ -18,7 +18,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      countries: data.countries.slice(0, 4),
+      countries: data.Country.slice(0, 10),
     },
   };
 }
@@ -38,7 +38,7 @@ export default function Home({ countries }) {
             <div key={country.code} className={styles.card}>
               <h3>{country.name}</h3>
               <p>
-                {country.code} - {country.capital}
+                {country.name} - {country.capital}
               </p>
             </div>
           ))}
